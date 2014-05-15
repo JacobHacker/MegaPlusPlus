@@ -1,0 +1,20 @@
+{
+	"folders":
+	[
+		{
+			"name": "Root",
+			"path": ".",
+		},
+		{
+			"path": "src/",
+			"folder_exclude_patterns": ["*"], // Don't show sub-folders
+			"file_include_patterns": ["*.cpp", "*.h"],
+			"name": "Source",
+		},
+	],
+	"settings":
+	{
+		"tab_size": 4,
+		"detect_indentation": false,
+	}
+}
