@@ -11,6 +11,7 @@ Requirements
 * scons
 
 Ubuntu (>=14.04):
+
     sudo apt-get install libcppnetlib-dev scons libcrypto++-dev
     sudo apt-get install libgtest-dev
     cd /usr/src/gtest && sudo cmake . && sudo make && sudo mv libg* /usr/lib/ && cd -
@@ -18,4 +19,5 @@ Ubuntu (>=14.04):
 Install (TODO)
 =======
 Linux:
+
     scons && scons -Q /usr/local/bin (TODO)
