@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <string>
+
 typedef unsigned int uint;
 typedef unsigned int ulint;
 typedef unsigned char byte;
@@ -24,4 +25,5 @@ std::vector<uint> aesCbcEncryptA32(std::vector<uint> data,
 								   std::vector<uint> key);
 
 std::vector<uint> prepareKey(std::vector<uint> arr);
+
 #endif
