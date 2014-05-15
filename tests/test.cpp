@@ -32,7 +32,7 @@ TEST(Crypto, AesCbc){
 	std::string testString = "1234567812345678";
 	std::string key = "1234567812345678";
 	std::vector<byte> iv;
-	iv.assign(16,'\0');
+	iv.assign(16, '\0');
 	
 	std::string cbcAes = aesCbcEncrypt(testString, key, iv);
 	ASSERT_EQ(toHex(cbcAes), "6DAC1C56E747FAE03ACF8C6891E428E0");
@@ -59,6 +59,18 @@ TEST(Crypto, PrepareKey){
 	ASSERT_EQ(k[1], 3347210462);
 	ASSERT_EQ(k[2], 4216150900);
 	ASSERT_EQ(k[3], 2125261106);
+}
+
+TEST(Crypto, Encoding){
+	ASSERT_EQ(toB64("Wikipedia.com"), "V2lraXBlZGlhLmNvbQ==");
+	ASSERT_EQ(toHex("Wikipedia"), "57696B697065646961");
+	ASSERT_EQ(b64UrlEncode("+/=="), "-_");
+	ASSERT_EQ(a32ToB64({1234,4321,3333,4567}), "AAAE0gAAEOEAAA0FAAAR1w");
+}
+
+TEST(Crypto, StringHash){
+	std::string b64 = stringHash("Wikipedia", {1, 2, 3, 4});
+	ASSERT_EQ(b64, "cDGRqi8wFw8");
 }
 
 int main(int argc, char *argv[]){
