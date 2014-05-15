@@ -1,0 +1,25 @@
+#!/usr/bin/python
+
+target = "test"
+ccflags = "-Wall"
+cc = "g++ -std=c++11"
+
+sources = [
+	"test.cpp",
+	"../src/crypto.cpp",
+	"../src/mega.cpp",
+]
+
+libs = [
+	"cryptopp",
+	"gtest",
+	"pthread"
+]
+
+env = Environment(CXX = cc)
+env.Program(
+	source = sources,
+	target = target,
+	CCFLAGS = ccflags,
+	LIBS = libs
+)
