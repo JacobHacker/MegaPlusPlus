@@ -8,10 +8,11 @@ Requirements
 * cppnetlib 11.0
 * crypto++
 * scons
+
 Ubuntu (>=14.04):
-	sudo apt-get install libcppnetlib-dev scons libcrypto++-dev
-	sudo apt-get install libgtest-dev
-	cd /usr/src/gtest && sudo cmake . && sudo make && sudo mv libg* /usr/lib/ && cd -
+    sudo apt-get install libcppnetlib-dev scons libcrypto++-dev
+    sudo apt-get install libgtest-dev
+    cd /usr/src/gtest && sudo cmake . && sudo make && sudo mv libg* /usr/lib/ && cd -
 
 Install (TODO)
 =======
