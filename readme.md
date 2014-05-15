@@ -1,7 +1,8 @@
 Licensing
 =========
-All code licensed under [GPLv3](https://gnu.org/licenses/gpl.html). [A Practical
-Guide to GPL Compliance](https://softwarefreedom.org/resources/2008/compliance-guide.html).
+All code licensed under [GPLv3](https://gnu.org/licenses/gpl.html).
+
+See also: [A Practical Guide to GPL Compliance](https://softwarefreedom.org/resources/2008/compliance-guide.html).
 
 Requirements
 ============
