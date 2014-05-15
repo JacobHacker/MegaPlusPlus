@@ -8,6 +8,8 @@
 
 #include "../src/crypto.h"
 
+using namespace MegaPP;
+
 TEST(Crypto, A32){
 	std::string testString{"Wikipedia"};
 	auto a32 = stringToA32(testString);

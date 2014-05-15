@@ -6,13 +6,12 @@
 
 #include "crypto.h"
 #include "mega.h"
-
+namespace MegaPP{
 Mega::Mega(std::string domain){
 	m_domain = domain;
 }
 
 void Mega::login(std::string username, std::string password){
-	vector<uint> key = prepareKey(a32ToString(password));
+	std::vector<uint> key = prepareKey(stringToA32(password));
 }
-
-
+}

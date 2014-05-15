@@ -6,7 +6,7 @@
 #define MEGAPP_MEGA_H
 
 #include <iostream>
-
+namespace MegaPP{
 const std::string DEFAULT_MEGA_DOMAIN = "https://mega.co.nz";
 
 class Mega{
@@ -17,5 +17,5 @@ class Mega{
 	private:
 		std::string m_domain;
 };
-
+}
 #endif

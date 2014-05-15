@@ -12,7 +12,7 @@
 #include <cryptopp/osrng.h>
 
 #include "crypto.h"
-
+namespace MegaPP{
 std::string toHex(std::string str){
 	std::string hex;
 	CryptoPP::StringSource ss(str, true /*pumpAll*/,
@@ -103,4 +103,5 @@ std::vector<uint> prepareKey(std::vector<uint> arr){
 		}
 	}
 	return pkey;
+}
 }
