@@ -94,7 +94,7 @@ std::vector<ulint> stringToA32(std::string str){
 	return out;
 }
 
-std::string a32ToString(std::vector<uint> a32){
+std::string a32ToString(const std::vector<uint> &a32){
 	std::string out{""};
 	for(size_t i=0; i<a32.size(); ++i){
 		out += (char)(a32[i] >> 8 * 3);
@@ -106,7 +106,7 @@ std::string a32ToString(std::vector<uint> a32){
 	return out;
 }
 
-std::string aesCbcEncrypt(std::string data, std::string key,
+std::string aesCbcEncrypt(const std::string &data, const std::string &key,
 						  std::vector<byte> iv){
 	CryptoPP::AutoSeededRandomPool prng;
 
@@ -138,12 +138,12 @@ std::string aesCbcEncrypt(std::string data, std::string key,
 	return out;
 }
 
-std::vector<uint> aesCbcEncryptA32(std::vector<uint> data,
-									 std::vector<uint> key){
+std::vector<uint> aesCbcEncryptA32(const std::vector<uint> &data,
+									 const std::vector<uint> &key){
 	return stringToA32(aesCbcEncrypt(a32ToString(data), a32ToString(key)));
 }
 
-std::vector<uint> prepareKey(std::vector<uint> arr){
+std::vector<uint> prepareKey(const std::vector<uint> &arr){
 	std::vector<uint> pkey{0x93C467E3, 0x7DB0C7A4, 0xD1BE3F81, 0x0152CB56};
 	for(size_t r = 0; r < 0x10000; ++r){
 		for(size_t j = 0; j < arr.size(); j += 4){
@@ -160,11 +160,11 @@ std::vector<uint> prepareKey(std::vector<uint> arr){
 	return pkey;
 }
 
-std::string a32ToB64(std::vector<uint> data){
+std::string a32ToB64(const std::vector<uint> &data){
 	return b64UrlEncode(toB64(a32ToString(data)));
 }
 
-std::string stringHash(std::string str, std::vector<uint> key){
+std::string stringHash(const std::string &str, const std::vector<uint> &key){
 	std::vector<uint> s32 = stringToA32(str);
 	std::vector<uint> h32{0, 0, 0, 0};
 	for(size_t i = 0; i < s32.size(); ++i){

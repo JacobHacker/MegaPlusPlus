@@ -9,11 +9,11 @@
 
 namespace MegaPP{
 
-Mega::Mega(std::string domain){
+Mega::Mega(const std::string &domain){
 	m_domain = domain;
 }
 
-void Mega::login(std::string username, std::string password){
+void Mega::login(const std::string &username, const std::string &password){
 	std::vector<uint> key{prepareKey(stringToA32(password))};
 	std::string uh{stringHash(username, key)};
 }

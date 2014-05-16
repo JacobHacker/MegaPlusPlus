@@ -13,9 +13,9 @@ const std::string DEFAULT_MEGA_DOMAIN = "https://mega.co.nz";
 
 class Mega{
 	public:
-		Mega(std::string domain = DEFAULT_MEGA_DOMAIN);
+		Mega(const std::string &domain = DEFAULT_MEGA_DOMAIN);
 
-		void login(std::string username, std::string password);
+		void login(const std::string &username, const std::string &password);
 	private:
 		std::string m_domain;
 };
