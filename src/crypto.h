@@ -35,4 +35,5 @@ std::vector<uint> prepareKey(const std::vector<uint> &arr);
 std::string stringHash(const std::string &str, const std::vector<uint> &key);
 
 }
+
 #endif

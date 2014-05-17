@@ -9,10 +9,13 @@ Requirements
 * cppnetlib 11.0
 * crypto++
 * scons
+* boost headers
+* boost-serialization
+* jsoncpp
 
 Ubuntu (>=14.04):
 
-    sudo apt-get install libcppnetlib-dev scons libcrypto++-dev
+    sudo apt-get install libcppnetlib-dev scons libcrypto++-dev libboost-dev libboost-serialization jsoncpp-dev
     sudo apt-get install libgtest-dev
     cd /usr/src/gtest && sudo cmake . && sudo make && sudo mv libg* /usr/lib/ && cd -
 

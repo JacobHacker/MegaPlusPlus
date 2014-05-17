@@ -7,6 +7,7 @@
 #include <cryptopp/files.h>
 
 #include "../src/crypto.h"
+#include "../src/mega.h"
 
 using namespace MegaPP;
 
@@ -71,6 +72,22 @@ TEST(Crypto, Encoding){
 TEST(Crypto, StringHash){
 	std::string b64 = stringHash("Wikipedia", {1, 2, 3, 4});
 	ASSERT_EQ(b64, "cDGRqi8wFw8");
+}
+
+TEST(Mega, login){
+	std::ifstream tacFile{"test_account"};
+	if(tacFile.good()){
+		std::string username, password;
+		tacFile >> username;
+		tacFile >> password;
+
+		Mega mega;
+		mega.login(username, password);
+		ASSERT_TRUE(mega.loggedIn());
+	}else{
+		std::cout << "Skipping login test, the file 'test_account' does not exist"
+			<< std::endl;
+	}
 }
 
 int main(int argc, char *argv[]){

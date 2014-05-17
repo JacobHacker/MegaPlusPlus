@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
 target = "test"
-ccflags = "-Wall"
-cc = "g++ -std=c++11"
+ccflags = "-Wall -O3"
+cc = "ccache g++ -std=c++11"
 
 sources = [
 	"test.cpp",
@@ -13,7 +13,15 @@ sources = [
 libs = [
 	"cryptopp",
 	"gtest",
-	"pthread"
+	"pthread",
+	"cppnetlib-uri",
+	"cppnetlib-client-connections",
+	"boost_system",
+	"boost_thread",
+	"crypt",
+	"ssl",
+	"crypto",
+	"jsoncpp",
 ]
 
 env = Environment(CXX = cc)
@@ -21,5 +29,5 @@ env.Program(
 	source = sources,
 	target = target,
 	CCFLAGS = ccflags,
-	LIBS = libs
+	LIBS = libs,
 )
